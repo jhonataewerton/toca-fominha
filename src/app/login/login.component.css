@@ -1,21 +1,49 @@
-/* Estilos gerais para o card */
-.content {
-  height: 100vh;
-  display: flex;
-  justify-content: center;
+/* login.component.css */
+
+/* Configuração do fundo com a imagem */
+body,
+html {
+  height: 100%;
+  margin: 0;
 }
 
-.login-card {
-  max-width: 400px;
-  margin: 50px auto;
-  padding: 20px;
+.login-container {
+  position: relative;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  box-sizing: border-box;
+  background-image: url("/assets/background.jpg");
+  background-size: cover;
+  background-position: center;
   justify-content: center;
-  height: 50vh;
-  align-self: center;
+  align-items: center;
+  padding: 30px;
+  height: 100vh;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 78, 0.5);
+}
+
+.login-form {
+  position: relative;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+mat-form-field {
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.login-button {
+  width: 100%;
 }
 
 .logo-container {
@@ -24,47 +52,8 @@
 }
 
 .logo {
-  width: 150px; /* Ajuste o tamanho conforme necessário */
-  height: auto;
-}
-
-mat-card-header {
-  text-align: center;
-}
-
-mat-card-title {
-  font-size: 1.5rem;
-  font-weight: 500;
-}
-
-.mat-form-field {
-  width: 100%;
-  margin-bottom: 16px;
-}
-
-.full-width {
-  width: 100%;
-}
-
-.button-container {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-}
-
-button {
-  width: 100%;
-  font-size: 1.1rem;
-}
-
-@media (max-width: 600px) {
-  /* Ajustes para dispositivos móveis */
-  .login-card {
-    margin: 20px;
-    padding: 15px;
-  }
-
-  .logo {
-    width: 120px; /* Ajuste para tamanho menor em dispositivos móveis */
-  }
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  z-index: 100000;
 }

@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "dist/toca-fominha",
+    "public": "dist/toca-fominha/browser",
     "ignore": [
       "firebase.json",
       "**/.*",
