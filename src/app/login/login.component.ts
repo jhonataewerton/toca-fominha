@@ -8,7 +8,7 @@ import { Route, Router } from '@angular/router';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css'],
+  styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent implements OnInit, OnDestroy {
   loginForm: FormGroup;
@@ -20,7 +20,7 @@ export class LoginComponent implements OnInit, OnDestroy {
     public authService: AuthService
   ) {
     this.loginForm = this.fb.group({
-      username: ['', Validators.required],
+      email: ['', Validators.required],
       password: ['', Validators.required],
     });
   }
@@ -33,8 +33,8 @@ export class LoginComponent implements OnInit, OnDestroy {
     this.getUser();
   }
 
-  get username() {
-    return this.loginForm.get('username');
+  get email() {
+    return this.loginForm.get('email');
   }
 
   get password() {
@@ -44,7 +44,7 @@ export class LoginComponent implements OnInit, OnDestroy {
   getUser() {}
 
   onLogin() {
-    const email = this.loginForm.get('username')?.getRawValue();
+    const email = this.loginForm.get('email')?.getRawValue();
     const password = this.loginForm.get('password')?.getRawValue();
     this.authService
       .signin(email, password)

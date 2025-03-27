@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrl: './home.component.sass',
+  styleUrl: './home.component.scss',
 })
 export class HomeComponent implements OnInit {
   players$!: Observable<Player[]>;
