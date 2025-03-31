@@ -1,6 +1,11 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import {
+  FormBuilder,
+  FormControl,
+  FormGroup,
+  Validators,
+} from '@angular/forms';
 import { AuthService } from './services/auth.service';
 import { Subject, takeUntil } from 'rxjs';
 import { Route, Router } from '@angular/router';
@@ -33,12 +38,12 @@ export class LoginComponent implements OnInit, OnDestroy {
     this.getUser();
   }
 
-  get email() {
-    return this.loginForm.get('email');
+  get emailControl(): FormControl {
+    return this.loginForm.get('email') as FormControl;
   }
 
-  get password() {
-    return this.loginForm.get('password');
+  get passwordControl(): FormControl {
+    return this.loginForm.get('password') as FormControl;
   }
 
   getUser() {}

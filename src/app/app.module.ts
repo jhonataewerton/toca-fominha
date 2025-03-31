@@ -19,9 +19,22 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { HomeComponent } from './home/home.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { PlayerComponent } from './player/player.component';
+import { InputComponent } from './components/input/input.component';
 
 @NgModule({
-  declarations: [AppComponent, LoginComponent, HomeComponent],
+  declarations: [
+    AppComponent,
+    LoginComponent,
+    HomeComponent,
+    NavbarComponent,
+    PlayerComponent,
+    InputComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -35,6 +48,8 @@ import { HomeComponent } from './home/home.component';
     MatCardModule,
     MatIconModule,
     MatFormFieldModule,
+    MatToolbarModule,
+    FontAwesomeModule,
   ],
   providers: [provideAnimationsAsync()],
   bootstrap: [AppComponent],

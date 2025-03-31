@@ -1,14 +1,14 @@
-@import "../../styles/variables/variables.scss";
+@import "../../styles/variables/variables.scss"; // Certifique-se de definir variáveis no seu projeto
 
 .login-container {
   display: flex;
   height: 100vh;
 
   .left-panel {
-    flex: 1;
+    flex: 2;
     background: url("../../assets/background.jpg") no-repeat center center;
     background-size: cover;
-    display: none;
+    display: none; // Escondido no mobile
   }
 
   .right-panel {
@@ -16,14 +16,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: $color-primary;
+    background-color: $color-primary; // #4668FE
   }
 
   .login-card {
-    background: transparent;
     text-align: center;
     padding: 20px;
-    color: $color-light;
+    color: $color-light; // #FFFFFF
     width: 100%;
     max-width: 350px;
 
@@ -35,12 +34,24 @@
     }
 
     .input-group {
-      text-align: left;
-      margin-bottom: 50px;
+      position: relative;
+      margin-bottom: 40px;
+      width: 90%;
+
+      label {
+        position: absolute;
+        left: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 1rem;
+        color: rgba($color-light, 0.7);
+        transition: all 0.3s ease-in-out;
+        pointer-events: none; // Evita clique no label
+      }
 
       input {
         width: 100%;
-        padding: 10px;
+        padding: 10px 10px 5px;
         border: none;
         border-bottom: 2px solid $color-light;
         background: transparent;
@@ -48,16 +59,18 @@
         font-size: 1rem;
         outline: none;
 
-        &::placeholder {
+        &:focus ~ label,
+        &:not(:placeholder-shown) ~ label {
+          top: 0;
+          font-size: 0.8rem;
           color: $color-light;
-          opacity: 0.7;
         }
       }
     }
 
     .btn-login {
-      width: 100%;
-      background: $color-secondary;
+      width: 90%;
+      background: $color-secondary; // #4AC7EE
       color: $color-light;
       font-family: "Raleway", sans-serif;
       font-size: 1rem;
@@ -74,10 +87,11 @@
   }
 }
 
+// ✅ Responsividade para Mobile
 @media (min-width: 768px) {
   .login-container {
     .left-panel {
-      display: block;
+      display: block; // Exibir imagem de fundo apenas em telas maiores
     }
   }
 }

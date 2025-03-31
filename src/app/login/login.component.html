@@ -1,29 +1,26 @@
 <div class="login-container">
-  <div class="left-panel">
-  </div>
+  <div class="left-panel"></div>
   <div class="right-panel">
     <div class="login-card">
       <img src="assets/logo_3.png" class="logo" />
       <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
-        <div class="input-group">
-          <input
-            id="email"
-            type="email"
-            formControlName="email"
-            placeholder="E-mail"
-          />
-        </div>
+        <app-input
+          id="email"
+          type="email"
+          label="E-mail"
+          placeholder=" "
+          [control]="emailControl"
+        ></app-input>
 
-        <div class="input-group">
-          <input
-            id="password"
-            type="password"
-            formControlName="password"
-            placeholder="Password"
-          />
-        </div>
+        <app-input
+          id="password"
+          type="password"
+          label="Senha"
+          placeholder=" "
+          [control]="passwordControl"
+        ></app-input>
 
-        <button type="submit" class="btn-login">Login</button>
+        <button type="submit" class="btn-login">Entrar</button>
       </form>
     </div>
   </div>
