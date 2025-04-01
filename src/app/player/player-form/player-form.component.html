@@ -1,0 +1,32 @@
+<h2 mat-dialog-title>Cadastro de jogadores</h2>
+<mat-dialog-content class="mat-typography">
+  <form [formGroup]="playerForm">
+    <div class="content-dialog-form">
+      <app-input
+        id="name"
+        type="text"
+        label="Nome"
+        placeholder=""
+        [control]="nameControl"
+        color="primary"
+      ></app-input>
+
+      <app-input
+        id="lasnme"
+        type="text"
+        label="Sobrenome"
+        placeholder=""
+        [control]="nameControl"
+        color="primary"
+      ></app-input>
+
+      <mat-slide-toggle primary>Mensal</mat-slide-toggle>
+    </div>
+  </form>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <div class="action-btn">
+    <button mat-dialog-close class="btn btn-secondary">Cancelar</button>
+    <button [mat-dialog-close]="true" class="btn btn-primary">Cadastrar</button>
+  </div>
+</mat-dialog-actions>

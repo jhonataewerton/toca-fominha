@@ -1,14 +1,14 @@
-@import "../../styles/variables/variables.scss"; // Certifique-se de definir variáveis no seu projeto
+@import "../../styles/variables/variables.scss";
 
 .login-container {
   display: flex;
   height: 100vh;
 
   .left-panel {
-    flex: 2;
+    flex: 1;
     background: url("../../assets/background.jpg") no-repeat center center;
     background-size: cover;
-    display: none; // Escondido no mobile
+    display: none;
   }
 
   .right-panel {
@@ -16,13 +16,14 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: $color-primary; // #4668FE
+    background-color: $color-primary;
   }
 
   .login-card {
+    background: transparent;
     text-align: center;
     padding: 20px;
-    color: $color-light; // #FFFFFF
+    color: $color-light;
     width: 100%;
     max-width: 350px;
 
@@ -34,24 +35,12 @@
     }
 
     .input-group {
-      position: relative;
-      margin-bottom: 40px;
-      width: 90%;
-
-      label {
-        position: absolute;
-        left: 10px;
-        top: 50%;
-        transform: translateY(-50%);
-        font-size: 1rem;
-        color: rgba($color-light, 0.7);
-        transition: all 0.3s ease-in-out;
-        pointer-events: none; // Evita clique no label
-      }
+      text-align: left;
+      margin-bottom: 50px;
 
       input {
         width: 100%;
-        padding: 10px 10px 5px;
+        padding: 10px;
         border: none;
         border-bottom: 2px solid $color-light;
         background: transparent;
@@ -59,39 +48,21 @@
         font-size: 1rem;
         outline: none;
 
-        &:focus ~ label,
-        &:not(:placeholder-shown) ~ label {
-          top: 0;
-          font-size: 0.8rem;
+        &::placeholder {
           color: $color-light;
+          opacity: 0.7;
         }
       }
     }
 
-    .btn-login {
-      width: 90%;
-      background: $color-secondary; // #4AC7EE
-      color: $color-light;
-      font-family: "Raleway", sans-serif;
-      font-size: 1rem;
-      padding: 12px;
-      border: none;
-      border-radius: 25px;
-      cursor: pointer;
-      transition: 0.3s;
 
-      &:hover {
-        background: darken($color-secondary, 10%);
-      }
-    }
   }
 }
 
-// ✅ Responsividade para Mobile
 @media (min-width: 768px) {
   .login-container {
     .left-panel {
-      display: block; // Exibir imagem de fundo apenas em telas maiores
+      display: block;
     }
   }
 }

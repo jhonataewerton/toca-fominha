@@ -1,0 +1,25 @@
+@import "../../../styles/variables/variables.scss";
+
+.content-dialog-form {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  padding: 30px;
+  justify-content: space-between;
+}
+
+h2 {
+  color: $color-primary !important;
+}
+.action-btn {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+}
+
+::ng-deep
+  .mat-mdc-dialog-container
+  .mat-mdc-dialog-title
+  + .mat-mdc-dialog-content {
+  width: 800px !important;
+}
